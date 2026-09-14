@@ -37,10 +37,6 @@ st.markdown("""
     .block-container {
         padding-top: 0rem !important;
         padding-bottom: 0rem !important;
-        /* Largura do cartão por decisão do dono: fica estreita, igual à dos
-           apps irmãos. Numa prancha de CAD o texto miúdo não é legível neste
-           tamanho — quem quiser ler abre a prévia em tela cheia, e é por isso
-           que a imagem é gerada a 380 dpi (ver PREVIEW_DPI). */
         max-width: 28rem !important;
     }
     header {display: none !important;}
@@ -81,15 +77,7 @@ TARGET_MIME = "application/pdf"
 A4_LONG_MM = 297.0
 A4_SHORT_MM = 210.0
 PAGE_MARGIN_MM = 10.0
-# Só a prévia na tela; o PDF entregue é vetorial e não tem DPI. A 150 dpi a
-# folha A4 virava 1754 px, e as cotas de uma prancha de CAD (medido: 0,12
-# unidade num desenho de 30) não sobreviviam à redução para a largura da
-# coluna — o desenho parecia vir sem texto.
-# Quem manda no tamanho do desenho na folha é o lado CURTO da A4 (210 mm =
-# 8,27 pol), não o longo: um desenho quadrado é ajustado pela altura. A 380
-# dpi esse lado dá 3143 px e a menor cota fica com 12,6 px — acima do piso de
-# legibilidade de 12 px que os testes exigem. O lado longo sai com 4443 px.
-PREVIEW_DPI = 380
+PREVIEW_DPI = 150         # só a prévia na tela; o PDF entregue não tem DPI
 DWG2DXF_TIMEOUT = 120     # segundos por tentativa
 
 BIN_DIR = Path(__file__).resolve().parent / "bin"
