@@ -96,6 +96,8 @@ Saída real nesse espelho:
 4. Nenhum pacote de sistema é obrigatório: o `bin/dwg2dxf` é estático e os demais motores vêm do `requirements.txt`. O `packages.txt` só acrescenta as fontes de sistema.
 5. Deploy
 
+App no ar: https://dwg-para-pdf.streamlit.app/
+
 ## 🔁 Reconstruir o binário do LibreDWG
 
 O `bin/dwg2dxf` foi compilado a partir do código-fonte oficial (release 0.14) com o `bin/build/Dockerfile`:
